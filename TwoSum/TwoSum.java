@@ -5,12 +5,6 @@
  * to target.
  * Link: https://leetcode.com/problems/two-sum/description/
  * 
- * Approach: My Approach is to have a HashMap that will store a key and value both of integer. Then, loop through the given
- *          number array. While looping, we should check if the target - num, which is the number currently in loop, is
- *          already there. If it is present, then we should return a new integer array which will have the index of the
- *          current loop and the index of the number target - num. Else, we should just add the index and number to the hash
- *          map and then continue with the loop forward. If the number array (nums) doesn't have the numbers that fullfil the
- *          given condition, then we just return an empty array at the end.
  * 
  * Example 1:
  * Input: nums = [2,7,11,15], target = 9
@@ -29,6 +23,13 @@
  * 
  * You may assume that each input would have exactly one solution, and you may not use the same element twice.
  * You can return the answer in any order.
+ * 
+ * Approach: My Approach is to have a HashMap that will store a key and value both of integer. Then, loop through the given
+ *          number array. While looping, we should check if the target - num, which is the number currently in loop, is
+ *          already there. If it is present, then we should return a new integer array which will have the index of the
+ *          current loop and the index of the number target - num. Else, we should just add the index and number to the hash
+ *          map and then continue with the loop forward. If the number array (nums) doesn't have the numbers that fullfil the
+ *          given condition, then we just return an empty array at the end.
  */
 
 import java.util.HashMap;
