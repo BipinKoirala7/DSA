@@ -28,6 +28,16 @@ package SingleNumber;
  * My Approach: 
  * We can do bitwise XOR operation on all number and the number which is different will be
  * the only one to remain a last. That number is the single number which is unique in nums.
+ * 
+ * Complexity Analysis: 
+ * Time: 1ms
+ * Time Complexity: O(n)
+ * Space: 45.99 MB
+ * Space Complexity: O(1)
+ * 
+ * @author Bipinkoirala
+ * @version 1.0
+ * 
  */
 
 public class SingleNumber {
