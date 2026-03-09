@@ -1,8 +1,10 @@
-import FindUniqueBinaryString.FindUniqueBinaryString;
+import ContainsDuplicate.ContainsDuplicate;
+
+import java.util.Arrays;
 
 public class Main {
   static void main() {
-    FindUniqueBinaryString uniqueBinaryString = new FindUniqueBinaryString();
-    System.out.println(uniqueBinaryString.findDifferentBinaryString(new String[] {"00", "01"}));
+    ContainsDuplicate containsDuplicate = new ContainsDuplicate();
+    System.out.println(containsDuplicate.containsDuplicate(new int[] {1,2,3,4}));
   }
 }
