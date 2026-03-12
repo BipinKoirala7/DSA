@@ -179,4 +179,15 @@ public class LinkedList {
     length--;
     return indexNode;
   }
+
+  public void reverse(){
+    if(length == 0){
+      System.out.println("No elements to reverse");
+      return;
+    }
+
+    Node temp = head;
+    head = tail;
+    tail = temp;
+  }
 }
