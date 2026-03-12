@@ -1,9 +1,10 @@
 import ComplementOfBaseInteger.ComplementOfBaseInteger;
+import ReverseBit.ReverseBit;
 
 
 public class Main {
   static void main() {
-    ComplementOfBaseInteger complement = new ComplementOfBaseInteger();
-    System.out.println(complement.bitwiseComplement(10));
+    ReverseBit reverseBit = new ReverseBit();
+    System.out.println(reverseBit.reverseBits(43261596));
   }
 }
