@@ -5,8 +5,8 @@ public class Main {
     TreeNode treeNode = new TreeNode(
         1);
 
-    Soltuion soltuion = new Soltuion();
+    Solution solution = new Solution();
 
-    System.out.println(soltuion.binaryTreePaths(treeNode).toString());
+    System.out.println(solution.binaryTreePaths(treeNode).toString());
   }
 }

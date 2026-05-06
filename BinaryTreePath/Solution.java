@@ -3,50 +3,32 @@ package BinaryTreePath;
 import java.util.ArrayList;
 import java.util.List;
 
-class Soltuion {
+class Solution {
   List<String> list = new ArrayList<>();
-  StringBuilder sb = new StringBuilder();
 
-  public List<String> binaryTreePaths(TreeNode head) {
-
-    class Traverse {
-      public void traverse(TreeNode currentNode) {
-        addToBuilder(currentNode.value);
-
-        if (currentNode.left != null) {
-          traverse(currentNode.left);
-        }
-
-        if (currentNode.right != null) {
-          traverse(currentNode.right);
-        }
-
-        if (currentNode.left == null && currentNode.right == null) {
-          list.add(sb.toString());
-        }
-        removeFromBuilder();
-      }
-    }
-
-    Traverse traverse = new Traverse();
-    traverse.traverse(head);
-
+  public List<String> binaryTreePaths(TreeNode root) {
+    if (root == null)
+      return list;
+    dfs(root, "");
     return list;
   }
 
-  private void addToBuilder(int value) {
-    if (sb.isEmpty()) {
-      sb.append(value);
-    } else {
-      sb.append("->" + value);
-    }
-  }
+  private void dfs(TreeNode node, String path) {
+    if (node == null)
+      return;
 
-  private void removeFromBuilder() {
-    if (sb.length() == 1) {
-      sb.deleteCharAt(0);
-    } else if (!sb.isEmpty()) {
-      sb.delete(sb.length() - 3, sb.length());
+    if (path.isEmpty()) {
+      path = "" + node.value;
+    } else {
+      path = path + "->" + node.value;
     }
+
+    if (node.left == null && node.right == null) {
+      list.add(path);
+      return;
+    }
+
+    dfs(node.left, path);
+    dfs(node.right, path);
   }
 }
