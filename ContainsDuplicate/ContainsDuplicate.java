@@ -4,21 +4,27 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
+/**
+ * Checks whether an array contains any repeated value.
+ */
 public class ContainsDuplicate {
   public boolean containsDuplicate(int[] nums) {
+    // Store each value once and fail as soon as we see a duplicate.
     HashSet<Integer> seen = new HashSet<>();
-    for(int num : nums){
-      if(seen.contains(num)){
+    for (int num : nums) {
+      if (seen.contains(num)) {
         return true;
       }
       seen.add(num);
     }
     return false;
   }
+
   public boolean containsDuplicate2(int[] nums) {
+    // Sort first so duplicates become adjacent.
     Arrays.sort(nums);
     for (int i = 1; i < nums.length; i++) {
-      if (nums[i] == nums[i-1]) {
+      if (nums[i] == nums[i - 1]) {
         return true;
       }
     }
@@ -26,6 +32,7 @@ public class ContainsDuplicate {
   }
 
   public boolean containsDuplicate3(int[] nums) {
+    // Count how many times each number appears.
     HashMap<Integer, Boolean> hashMap = new HashMap<>();
 
     for (int num : nums) {

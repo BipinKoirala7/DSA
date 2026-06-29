@@ -1,8 +1,7 @@
 package AddOneToLast;
 
 /**
- * Title: Add One to Last
- * Problem:
+ * Adds one to an integer array that represents a number.
  */
 
 public class AddOneToLast {
@@ -10,6 +9,7 @@ public class AddOneToLast {
         if (digits == null) {
             return null;
         }
+        // Walk from the back so we can carry only when a digit overflows.
         for (int i = digits.length - 1; i >= 0; i--) {
             digits[i] = digits[i] + 1;
 

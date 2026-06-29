@@ -3,8 +3,12 @@ package PalindromeLinkedList;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Checks whether a linked list reads the same forward and backward.
+ */
 public class Solution {
   public boolean isPalindrome(ListNode head) {
+    // Convert the list into a string so we can compare both directions.
     StringBuilder sb = new StringBuilder();
 
     ListNode currentNode = head;
@@ -19,6 +23,7 @@ public class Solution {
   }
 
   public boolean isPalindrome2(ListNode head) {
+    // Store values in a list and compare mirrored positions.
     List<Integer> list = new ArrayList<>();
     while (head != null) {
       list.add(head.val);

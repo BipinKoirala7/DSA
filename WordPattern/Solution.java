@@ -4,14 +4,19 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 // Add a new solution
+/**
+ * Checks whether a pattern matches a space-separated sequence of words.
+ */
 public class Solution {
   public boolean wordPattern(String pattern, String s) {
+    // Null input is treated as an immediate success in this implementation.
     if (pattern == null || s == null)
       return true;
 
     String[] strings = s.split(" ");
     System.out.println(Arrays.toString(strings));
 
+    // Pattern length and word count must match before mapping can work.
     if (pattern.length() != strings.length)
       return false;
 
@@ -19,6 +24,7 @@ public class Solution {
     char[] patternCharArray = pattern.toCharArray();
 
     for (int i = 0; i < patternCharArray.length; i++) {
+      // Enforce a one-to-one mapping between pattern letters and words.
       System.out.println("------------------------------------------");
 
       String patternLetter = String.valueOf(patternCharArray[i]);

@@ -3,6 +3,9 @@ package ImplementStackWithQueue;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Implements a stack using two queues.
+ */
 public class MyStack<T> {
   Queue<T> queue1;
   Queue<T> queue2;
@@ -13,10 +16,13 @@ public class MyStack<T> {
   }
 
   public void push(T x) {
-    if(queue1.isEmpty()) queue1.add(x);
-    else if (queue2.isEmpty()) queue2.add(x);
+    // Always keep the newest item at the front of the active queue.
+    if (queue1.isEmpty())
+      queue1.add(x);
+    else if (queue2.isEmpty())
+      queue2.add(x);
     else {
-      if(queue1.size() > queue2.size()){
+      if (queue1.size() > queue2.size()) {
         queue1.forEach(_ -> queue2.poll());
         queue2.add(x);
       } else {
@@ -27,17 +33,20 @@ public class MyStack<T> {
   }
 
   public T pop() {
-    if(queue1.size() > queue2.size()) {
+    // Pop from whichever queue currently holds the stack top.
+    if (queue1.size() > queue2.size()) {
       return queue2.poll();
-    }
-    else {
+    } else {
       return queue1.poll();
     }
   }
 
   public T top() {
-    if(queue1.size() > queue2.size()) return queue1.peek();
-    else return queue2.peek();
+    // Peek the active queue without removing the top element.
+    if (queue1.size() > queue2.size())
+      return queue1.peek();
+    else
+      return queue2.peek();
   }
 
   public boolean empty() {
