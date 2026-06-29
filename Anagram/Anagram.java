@@ -5,12 +5,6 @@ import java.util.HashMap;
 /**
  * Title: Valid Anagram
  * Link: https://leetcode.com/problems/valid-anagram/
- * Problem: Given two strings s and t, return true if t is an anagram of s, and
- * false otherwise.
- * 
- * Constraints:
- * 1 <= s.length, t.length <= 5 * 104
- * s and t consist of lowercase English letters.
  * 
  * My Approach:
  * We can create character array from the given string and we can store a
